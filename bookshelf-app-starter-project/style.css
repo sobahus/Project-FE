@@ -1,0 +1,383 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans;
+}
+
+header h1 {
+  text-align: center;
+  color: #fff;
+  background-color: #0c44ac;
+  padding: 1rem;
+}
+
+main {
+  margin: 2rem 2rem;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.tambah-buku {
+  height: 450px;
+  outline: solid 2px #d9d9d9;
+  box-shadow: 0 0 4px #cce3ce;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: 0.3s;
+}
+
+h2 {
+  cursor: default;
+  color: #0c44ac;
+  text-align: center;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.tambah-buku h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #0c44ac;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.tambah-buku h2:hover::after {
+  transform: scaleX(1);
+}
+
+.tambah-buku input {
+  width: 380px;
+  padding: 1vh;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  transition: 0.3s;
+  outline: 1px solid #c9c9c9;
+}
+
+.tambah-buku input:focus::placeholder {
+  color: transparent;
+  transition: 0.3s;
+}
+
+.tambah-buku input:focus {
+  transition: all ease-out 0.3s;
+  transform: translateY(-1.5px);
+  outline: solid 1px #0353a4;
+  box-shadow: 0 0 6px rgba(2, 62, 138, 0.2);
+}
+
+.tambah-buku form {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.read {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.read label {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.read input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.read input[type="checkbox"]:checked {
+  background-color: #0c44ac;
+}
+
+.read input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+
+.read input[type="checkbox"]:hover {
+  border-color: #666;
+}
+
+#bookFormSubmit {
+  background-color: #0c44ac;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#bookFormSubmit:hover {
+  background-color: #0353a4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#bookFormSubmit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container-book {
+  gap: 1rem;
+  display: flex;
+}
+
+.cari-buku {
+  margin-top: 1rem;
+  outline: solid 2px #d9d9d9;
+  box-shadow: 0 0 4px #cce3ce;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: 0.3s all ease-in-out;
+}
+
+.cari-buku form {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cari-buku h2 {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cari-buku input {
+  width: 100%;
+  padding: 1vh;
+  border-radius: 10px;
+  border: 2px solid #c9c9c9;
+  transition: 0.3s;
+}
+
+.cari-buku input:focus::placeholder {
+  color: transparent;
+  transition: 0.3s;
+}
+
+.cari-buku input:focus {
+  transition: all ease-out 0.3s;
+  transform: translateY(-1.5px);
+  outline: solid 1px #0353a4;
+  box-shadow: 0 0 6px rgba(2, 62, 138, 0.2);
+}
+
+#searchSubmit {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  background-color: #0c44ac;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 20%;
+  transition: 0.3s;
+}
+
+#searchSubmit:hover {
+  color: #fff;
+  background-color: #0353a4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#searchSubmit:active {
+  transform: translateY(0);
+}
+
+.read-book,
+.unread-book {
+  margin-top: 2%;
+  padding: 1.5rem;
+}
+
+.unread-book h2,
+.read-book h2 {
+  text-align: center;
+  cursor: default;
+  transition: 0.3s;
+}
+
+.unread-book::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #0c44ac;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.unread-book:hover::after {
+  transform: translateX(-1);
+}
+
+#incompleteBookList,
+#completeBookList {
+  margin-top: 1rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(auto, auto));
+}
+
+.container-book h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #0c44ac;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.container-book h2:hover::after {
+  transform: scaleX(1);
+}
+
+[data-testid="bookItem"] {
+  display: grid;
+  border-radius: 10px;
+  text-align: center;
+  outline: 2px solid #d9d9d9;
+  padding: 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+[data-testid="bookItem"] div {
+  display: grid;
+  gap: 10px;
+  width: auto;
+  padding-top: 10%;
+}
+
+[data-testid="bookItem"] p {
+  font-weight: 400;
+  text-align: center;
+}
+
+[data-testid="bookItem"] h3 {
+  font: 1rem;
+  padding: 10px;
+}
+
+[data-testid="bookItem"] button {
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+}
+
+[data-testid="bookItemIsCompleteButton"] {
+  background-color: #4c5454;
+  color: #fff;
+  transition: 0.3s;
+}
+
+[data-testid="bookItemIsCompleteButton"]:hover {
+  background-color: #161a1d;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+[data-testid="bookItemIsCompleteButton"]:active {
+  background-color: #4c5454;
+  transform: translateX(0);
+}
+
+[data-testid="bookItemDeleteButton"] {
+  background-color: #f55d3e;
+  color: #fff;
+}
+[data-testid="bookItemDeleteButton"]:hover {
+  background-color: #d53734;
+  transform: translateY(-1px);
+}
+
+[data-testid="bookItemDeleteButton"]:active {
+  background-color: #f55d3e;
+}
+
+[data-testid="bookItemEditButton"] {
+  background-color: #1ea896;
+  color: #fff;
+}
+
+[data-testid="bookItemEditButton"]:hover {
+  background-color: #188c7e;
+  transform: translateY(-1px);
+}
+
+[data-testid="bookItemEditButton"]:active {
+  background-color: #1ea896;
+  transform: translateY(0);
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+  .tambah-buku {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .tambah-buku form {
+    width: auto;
+  }
+
+  .tambah-buku input {
+    width: 93%;
+    padding: 10px;
+  }
+
+  .tambah-buku {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+
+  .cari-buku {
+    width: 100%;
+  }
+
+  .cari-buku input {
+    padding: 10px;
+  }
+
+  #searchSubmit {
+    width: 30%;
+  }
+
+  .container-book {
+    display: grid;
+  }
+}
